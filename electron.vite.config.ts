@@ -1,11 +1,13 @@
-import { resolve } from 'path'
+import { resolve } from 'node:path'
 import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from 'tailwindcss'
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()]
+    plugins: [externalizeDepsPlugin()],
+
+    publicDir: resolve('resources') // copia os resources para a pasta main na build da aplicação
   },
   preload: {
     plugins: [externalizeDepsPlugin()]
