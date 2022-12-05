@@ -5,7 +5,7 @@ import { Header } from './components/Header'
 
 function App(): JSX.Element {
   return (
-    <div className="h-screen w-screen bg-rotion-900 text-rotion-900 flex">
+    <div className="h-screen w-screen text-rotion-100 flex">
       <Sidebar />
 
       <div className="flex-1 flex flex-col max-h-screen">
