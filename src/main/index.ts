@@ -6,8 +6,8 @@ import { createFileRoute, createURLRoute } from 'electron-router-dom'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1000,
-    height: 670,
+    width: 1120,
+    height: 700,
     show: false,
     autoHideMenuBar: true,
     backgroundColor: '#17141f',
