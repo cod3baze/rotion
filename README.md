@@ -5,3 +5,24 @@ An Electron application with React and TypeScript
 ## Editor libs
 
 - `npm install @tiptap/react @tiptap/starter-kit @tiptap/extension-document @tiptap/extension-placeholder @tiptap/extension-typography @tiptap/extension-highlight`
+
+preload: Roda no renderer e tem acesso ao server-side
+
+| `docs`                      | `desc`                                          |
+| --------------------------- | ----------------------------------------------- |
+| pasta `renderer`            | contém todo código frontend                     |
+| pasta `preload`             | faz uma ponte entre o **main** e o **renderer** |
+| method `ipcRenderer.invoke` | envia e pode receber um retorno                 |
+| method `ipcMain.handle`     | envia dados em async para o **invoke**          |
+| method `ipcRenderer.send`   | Somente envia mensagens                         |
+|                             |                                                 |
+
+- No arquivo: `electron.vite.config.ts.renderer`
+
+```ts
+  // coloca o process.platform disponível no processo renderer
+
+  define: {
+    'process.platform': JSON.stringify(process.platform)
+  },
+```
