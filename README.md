@@ -26,3 +26,11 @@ preload: Roda no renderer e tem acesso ao server-side
     'process.platform': JSON.stringify(process.platform)
   },
 ```
+
+## Storage
+
+> offline storage
+
+- sqlite: funciona com arquivo local
+- rxdb
+- electron-store: baseado em **JSON**, possui algumas limitações, lê todos os dados ao mesmo tempo, não tem como fazer a paginação. (usado mais para as preferências do usuário)
