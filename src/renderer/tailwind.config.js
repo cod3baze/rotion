@@ -57,3 +57,7 @@ module.exports = {
     })
   ]
 }
+
+/**
+ * addUtilities: permite criar suas próprias classes no tailwind.
+ */

@@ -31,3 +31,9 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.api = api
 }
+
+/**
+ * contextBridge.exposeInMainWorld: expoe algum método para dentro do processo do *Render*
+ *
+ * no Render: window.api.fetchDocuments(''): acessa a função exposta
+ */
