@@ -13,7 +13,11 @@ export function Sidebar() {
 
   const { data } = useQuery({
     queryKey: ['documents'],
-    queryFn: async () => window.api.fetchDocuments()
+    queryFn: async () => {
+      const response = await window.api.fetchDocuments()
+
+      return response.data
+    }
   })
 
   return (
