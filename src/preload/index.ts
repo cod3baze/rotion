@@ -32,11 +32,11 @@ const api = {
     return ipcRenderer.invoke(IPC.DOCUMENTS.CREATE)
   },
 
-  SaveDocument(request: SaveDocumentRequest): Promise<void> {
+  saveDocument(request: SaveDocumentRequest): Promise<void> {
     return ipcRenderer.invoke(IPC.DOCUMENTS.SAVE, request)
   },
 
-  DeleteDocument(request: DeleteDocumentRequest): Promise<void> {
+  deleteDocument(request: DeleteDocumentRequest): Promise<void> {
     return ipcRenderer.invoke(IPC.DOCUMENTS.DELETE, request)
   }
 }
