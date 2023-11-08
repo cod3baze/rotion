@@ -1,7 +1,7 @@
 import path from 'node:path'
-import { Menu, Tray, app, nativeImage } from 'electron'
+import { BrowserWindow, Menu, Tray, app, nativeImage } from 'electron'
 
-app.whenReady().then(() => {
+export function createTray(window: BrowserWindow) {
   const icon = nativeImage.createFromPath(path.resolve(__dirname, 'rotionTemplate.png'))
   const tray = new Tray(icon)
 
@@ -10,17 +10,36 @@ app.whenReady().then(() => {
       label: 'Rotion',
       enabled: false
     },
+    { type: 'separator' },
     {
-      type: 'separator'
+      label: 'Criar novo documento',
+      click: () => {
+        window.webContents.send('new-document')
+      }
+    },
+    { type: 'separator' },
+    { label: 'Documentos recentes', enabled: false },
+    {
+      label: 'Discover',
+      accelerator: 'CommandOrControl+1',
+      acceleratorWorksWhenHidden: false
     },
     {
-      label: 'Ativar modo dark',
-      type: 'checkbox'
-    }
+      label: 'Cognu.co',
+      accelerator: 'CommandOrControl+2',
+      acceleratorWorksWhenHidden: false
+    },
+    {
+      label: 'Rocketseat',
+      accelerator: 'CommandOrControl+3',
+      acceleratorWorksWhenHidden: false
+    },
+    { type: 'separator' },
+    { label: 'Sair do Rotion', role: 'quit' }
   ])
 
   tray.setContextMenu(menu)
-})
+}
 
 /**
  * imagem deve ser Preta, fundo transparente e o nome deve terminar com `Template`
