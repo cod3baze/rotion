@@ -36,3 +36,7 @@ preload: Roda no renderer e tem acesso ao server-side
 - electron-store: baseado em **JSON**, possui algumas limitações, lê todos os dados ao mesmo tempo, não tem como fazer a paginação. (usado mais para as preferências do usuário)
 
 `electron-builder --publish always`: sempre que gerar a build gera uma release no github
+
+`git tag v1.0.0`: gera a tag no github
+`git push`
+`git push --tags`: envia as tags
